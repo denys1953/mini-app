@@ -6,13 +6,13 @@ res.addEventListener('click', restart)
 for (let i = 1; i <= 25; i++) {
    intArr.push(i)
 }
-for (let i = 10; i <= 25; i++) {
+for (let i = 20; i <= 66; i++) {
    arr.push(i)
 }
 shuffleArray(intArr)
 function arrPaint() {
    intArr.forEach(e => {
-      let create = document.createElement('div')
+      let create = document.createElement('tr')
       create.className = 'cell'
       create.innerHTML = e
       create.setAttribute('style', RandomStyle())
