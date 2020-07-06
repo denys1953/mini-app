@@ -1,13 +1,9 @@
 let app = document.querySelector('#app')
 let res = document.querySelector('#restart')
 let intArr = []
-let arr = []
 res.addEventListener('click', restart)
 for (let i = 1; i <= 25; i++) {
    intArr.push(i)
-}
-for (let i = 10; i <= 30; i++) {
-   arr.push(i)
 }
 shuffleArray(intArr)
 function arrPaint() {
@@ -35,10 +31,16 @@ function restart() {
 }
 arrPaint() 
 
-function RandomInt() {
-   return arr[Math.floor(Math.random() * arr.length)];
+function RandomColor() {
+   return randomInteger(0, 255) + ',' + randomInteger(0, 255) + ',' + randomInteger(0, 255);
 }
 
 function RandomStyle() {
-   return `font-size: ${RandomInt()}px`
+   return `font-size: ${randomInteger(10, 30)}px;color: rgb(${RandomColor()})`
+}
+
+function randomInteger(min, max) {
+   // получить случайное число от (min-0.5) до (max+0.5)
+   let rand = min - 0.5 + Math.random() * (max - min + 1);
+   return Math.round(rand);
 }
