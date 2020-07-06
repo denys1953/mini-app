@@ -4,8 +4,8 @@ body {
 #app {
    margin: 0 auto;
    margin-top: 50px;
-   width: 250px;
-   height: 250px;
+   width: 300px;
+   height: 300px;
    user-select: none;
 }
 .cell {
@@ -14,8 +14,8 @@ body {
    cursor: pointer;
    line-height: 45px;
    font-size: 100px;
-   width: 50px;
-   max-height: 50px;
+   width: 60px;
+   height: 60px;
    border: 1px solid black;
    border-radius: 3px;
 }
