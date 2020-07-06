@@ -36,7 +36,7 @@ function RandomColor() {
 }
 
 function RandomStyle() {
-   return `font-size: ${randomInteger(10, 30)}px;color: rgb(${RandomColor()})`
+   return `font-size: ${randomInteger(15, 30)}px;color: rgb(${RandomColor()})`
 }
 
 function randomInteger(min, max) {
