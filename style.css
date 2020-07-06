@@ -4,18 +4,18 @@ body {
 #app {
    margin: 0 auto;
    margin-top: 50px;
-   width: 500px;
-   height: 500px;
+   width: 250px;
+   height: 250px;
    user-select: none;
-   white-space: pre-wrap;
 }
 .cell {
    display: inline-block;
    text-align: center;
    cursor: pointer;
-   line-height: 1.5;
-   width: 100px;
-   height: 100px;
+   line-height: 45px;
+   font-size: 100px;
+   width: 50px;
+   max-height: 50px;
    border: 1px solid black;
    border-radius: 3px;
 }

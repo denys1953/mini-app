@@ -6,7 +6,7 @@ res.addEventListener('click', restart)
 for (let i = 1; i <= 25; i++) {
    intArr.push(i)
 }
-for (let i = 20; i <= 66; i++) {
+for (let i = 10; i <= 30; i++) {
    arr.push(i)
 }
 shuffleArray(intArr)
