@@ -3,7 +3,7 @@ let res = document.querySelector('#restart')
 let timer = document.querySelector('#time')
 let result = document.querySelector('#result')
 let intArr = []
-let time = 50;
+let time = 40;
 let interval
 let startGame = document.querySelector('#start')
 startGame.addEventListener('click', start)
@@ -72,7 +72,7 @@ function restart() {
    app.innerHTML = null
    arrPaint()
    num = 1
-   time = 50
+   time = 40
    clearInterval(interval)
    interval = setInterval(timerCount, 1000)
    result.innerHTML = ''
