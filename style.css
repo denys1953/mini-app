@@ -20,7 +20,17 @@ body {
    border: 1px solid black;
    border-radius: 3px;
 }
-#restart {
-   margin-top: 100px;
+#restart, #start {
+   margin-top: 50px;
    margin-right: 20px;
+}
+
+#restart {
+   display: none;
+}
+.active {
+   background-color: crimson;
+}
+.wrap {
+   margin-top: 10px;
 }

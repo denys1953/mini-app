@@ -1,9 +1,50 @@
 let app = document.querySelector('#app')
 let res = document.querySelector('#restart')
+let timer = document.querySelector('#time')
+let result = document.querySelector('#result')
 let intArr = []
+let time = 50;
+let interval
+let startGame = document.querySelector('#start')
+startGame.addEventListener('click', start)
+let num = 1
 res.addEventListener('click', restart)
 for (let i = 1; i <= 25; i++) {
    intArr.push(i)
+}
+function start() {
+   arrPaint()
+   startGame.style.display = 'none'
+   res.style.display = 'inline-block'
+   timerCount()
+   interval = setInterval(timerCount, 1000)
+   checkVinner()
+}
+function checkVinner() {
+   let cell = document.querySelectorAll('.cell')
+   for (let i = 0; i < cell.length; i++) {
+      cell[i].addEventListener('click', game)
+      function game() {
+         if (cell[i].innerHTML == num && time >= 0) {
+            num++
+            cell[i].classList.add('active')
+         }
+         if (num == 26) {
+            clearInterval(interval)
+            result.innerHTML = 'Вы выиграли!'
+         }
+         
+      }
+   }
+}
+function timerCount() {
+   if (time >= 0) {
+      timer.innerHTML = `Времени осталось: ${time}`
+      time--
+   } else {
+      clearInterval(interval)
+      result.innerHTML = 'Вы проиграли!'
+   }
 }
 shuffleArray(intArr)
 function arrPaint() {
@@ -24,19 +65,26 @@ function shuffleArray(array) {
       array[j] = temp;
    }
 }
+
+
 function restart() {
    shuffleArray(intArr)
    app.innerHTML = null
    arrPaint()
+   num = 1
+   time = 50
+   clearInterval(interval)
+   interval = setInterval(timerCount, 1000)
+   result.innerHTML = ''
+   checkVinner()
 }
-arrPaint() 
 
 function RandomColor() {
    return randomInteger(0, 255) + ',' + randomInteger(0, 255) + ',' + randomInteger(0, 255);
 }
 
 function RandomStyle() {
-   return `font-size: ${randomInteger(15, 30)}px;color: rgb(${RandomColor()})`
+   return `font-size: ${randomInteger(15, 40)}px;color: rgb(${RandomColor()})`
 }
 
 function randomInteger(min, max) {
